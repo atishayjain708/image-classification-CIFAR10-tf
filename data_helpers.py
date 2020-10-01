@@ -4,6 +4,18 @@ import numpy as np
 import pickle
 import sys
 
+def quick_load_CIFAR10(filename):
+  with open(filename, 'rb') as f:
+    if sys.version_info[0] < 3:
+      dict = pickle.load(f)
+    else:
+      dict = pickle.load(f, encoding='unicode')
+    x = dict['data']
+    y = dict['labels']
+    x = x.astype(float)
+    y = np.array(y)
+  return x, y
+  
 def load_CIFAR10_batch(filename):
   '''load data from single CIFAR-10 file'''
 
