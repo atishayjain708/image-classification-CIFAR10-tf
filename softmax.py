@@ -14,7 +14,7 @@ beginTime = time.time()
 # Parameter definitions
 batch_size = 100
 learning_rate = 0.005
-max_steps = 1000
+max_steps = 900
 
 # Uncommenting this line removes randomness
 # You'll get exactly the same result on each run
